@@ -1,0 +1,35 @@
+Machine learning is just geometry
+All data is the same: problem stays the same(geometry) and ML algorithm doesn't care about
+what the data means to use
+
+Supervised vs Unsupervised:
+
+   Supervised Learning = has labeled historical data that we will be used to inform our model
+   We call the label or thing we're trying to predict the "target" which is known in Supervised learning
+
+   Unsupervised Learning = labled historical data that will be used by our model to predict
+   and unknown "target"
+
+These both are types of Supervised learning:
+
+Regression is trying to fit a line or curve to some data points by predicting a number:
+statistics, geometry. In regression we try to make the line as close to the data points as
+possible, also known as line of best fit. target in this type of learning are own as a numerical value.
+   
+   many real world datasets are non-linear
+
+Classification is trying to classify an object and predict the category/label. we use the line to separate data points of different colors (classes). line is used as a decision boundary. target in this are known as categorical values (often True or False, but can be multiple catagories)
+
+   can be complex with boundary decisions.
+
+   An algorithm used for solving Classification problems is called Logistic Regression, not to be confused with Regression type learning.
+
+   Classification Terminology:
+      Target = column that represents what we're trying to predict
+      Feature/Predictors = columns that contain the information used to predict the target
+
+   Linear Classification Theory:\
+   
+   The challenge of building the model will be determining what the best possible line is.
+
+

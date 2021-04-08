@@ -1,0 +1,870 @@
+Running BrowserMob Proxy using LittleProxy implementation. To revert to the legacy implementation, run the proxy with the command-line option '--use-littleproxy false'.
+[INFO  2021-04-02T20:37:53,050 net.lightbody.bmp.proxy.Main] (main) Starting BrowserMob Proxy version 2.1.4 
+[INFO  2021-04-02T20:37:53,077 org.eclipse.jetty.util.log] (main) jetty-7.x.y-SNAPSHOT 
+[INFO  2021-04-02T20:37:53,319 org.eclipse.jetty.util.log] (main) started o.e.j.s.ServletContextHandler{/,null} 
+[INFO  2021-04-02T20:37:53,407 org.eclipse.jetty.util.log] (main) Started SelectChannelConnector@0.0.0.0:8080 
+[INFO  2021-04-02T20:37:54,470 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp13187222-15) Starting proxy at address: 0.0.0.0/0.0.0.0:8081 
+[INFO  2021-04-02T20:37:54,489 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp13187222-15) Proxy listening with TCP transport 
+[INFO  2021-04-02T20:37:54,953 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp13187222-15) Proxy started at address: /0:0:0:0:0:0:0:0:8081 
+[WARN  2021-04-02T20:37:59,153 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) No content type specified in response from /cdn-cgi/bm/cv/result?req_id=639f42e3cfc9eb91. Content will be treated as application/octet-stream 
+[WARN  2021-04-02T20:37:59,903 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:37:59,903 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:01,087 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:01,087 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:01,341 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:01,341 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[INFO  2021-04-02T20:38:01,435 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-2) (AWAITING_INITIAL) [id: 0xfa1401b5, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49737]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
+[WARN  2021-04-02T20:38:01,464 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:01,464 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:02,746 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:02,746 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:02,916 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Failed to decompress response with encoding type gzip when decoding request from /pagead/js/adsbygoogle.js net.lightbody.bmp.exception.DecompressionException: Unable to decompress response
+	at net.lightbody.bmp.util.BrowserMobHttpUtil.decompressContents(BrowserMobHttpUtil.java:101) ~[browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.ServerResponseCaptureFilter.decompressContents(ServerResponseCaptureFilter.java:131) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.ServerResponseCaptureFilter.captureFullResponseContents(ServerResponseCaptureFilter.java:118) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.ServerResponseCaptureFilter.serverToProxyResponse(ServerResponseCaptureFilter.java:99) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.HarCaptureFilter.serverToProxyResponse(HarCaptureFilter.java:250) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.BrowserMobHttpFilterChain.serverToProxyResponse(BrowserMobHttpFilterChain.java:123) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ClientToProxyConnection.respond(ClientToProxyConnection.java:418) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.respondWith(ProxyToServerConnection.java:519) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.readHTTPChunk(ProxyToServerConnection.java:251) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.readHTTP(ProxyConnection.java:146) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.read(ProxyConnection.java:120) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.read(ProxyToServerConnection.java:214) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.channelRead0(ProxyConnection.java:587) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:266) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection$ResponseReadMonitor.channelRead(ProxyConnection.java:738) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection$BytesReadMonitor.channelRead(ProxyConnection.java:692) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1069) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:902) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:411) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:248) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1334) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:926) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:129) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:651) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:574) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:488) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:450) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:873) [browsermob-dist-2.1.4.jar:?]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_281]
+Caused by: java.io.EOFException
+	at java.util.zip.GZIPInputStream.readUByte(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.readUShort(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.readHeader(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.<init>(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.<init>(Unknown Source) ~[?:1.8.0_281]
+	at net.lightbody.bmp.util.BrowserMobHttpUtil.decompressContents(BrowserMobHttpUtil.java:89) ~[browsermob-dist-2.1.4.jar:?]
+	... 53 more
+
+[WARN  2021-04-02T20:38:02,920 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Unable to decompress content with encoding: gzip. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:05,319 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:05,319 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:05,475 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) No content type specified in response from /count.js. Content will be treated as application/octet-stream 
+[WARN  2021-04-02T20:38:05,934 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:05,934 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:05,939 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:05,939 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:06,046 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Failed to decompress response with encoding type gzip when decoding request from /pagead/js/adsbygoogle.js net.lightbody.bmp.exception.DecompressionException: Unable to decompress response
+	at net.lightbody.bmp.util.BrowserMobHttpUtil.decompressContents(BrowserMobHttpUtil.java:101) ~[browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.ServerResponseCaptureFilter.decompressContents(ServerResponseCaptureFilter.java:131) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.ServerResponseCaptureFilter.captureFullResponseContents(ServerResponseCaptureFilter.java:118) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.ServerResponseCaptureFilter.serverToProxyResponse(ServerResponseCaptureFilter.java:99) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.HarCaptureFilter.serverToProxyResponse(HarCaptureFilter.java:250) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.BrowserMobHttpFilterChain.serverToProxyResponse(BrowserMobHttpFilterChain.java:123) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ClientToProxyConnection.respond(ClientToProxyConnection.java:418) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.respondWith(ProxyToServerConnection.java:519) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.readHTTPChunk(ProxyToServerConnection.java:251) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.readHTTP(ProxyConnection.java:146) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.read(ProxyConnection.java:120) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.read(ProxyToServerConnection.java:214) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.channelRead0(ProxyConnection.java:587) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:266) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection$ResponseReadMonitor.channelRead(ProxyConnection.java:738) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection$BytesReadMonitor.channelRead(ProxyConnection.java:692) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1069) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:902) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:411) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:248) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1334) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:926) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:129) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:651) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:574) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:488) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:450) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:873) [browsermob-dist-2.1.4.jar:?]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_281]
+Caused by: java.io.EOFException
+	at java.util.zip.GZIPInputStream.readUByte(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.readUShort(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.readHeader(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.<init>(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.<init>(Unknown Source) ~[?:1.8.0_281]
+	at net.lightbody.bmp.util.BrowserMobHttpUtil.decompressContents(BrowserMobHttpUtil.java:89) ~[browsermob-dist-2.1.4.jar:?]
+	... 53 more
+
+[WARN  2021-04-02T20:38:06,047 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Unable to decompress content with encoding: gzip. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:06,127 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Failed to decompress response with encoding type gzip when decoding request from /pagead/js/adsbygoogle.js net.lightbody.bmp.exception.DecompressionException: Unable to decompress response
+	at net.lightbody.bmp.util.BrowserMobHttpUtil.decompressContents(BrowserMobHttpUtil.java:101) ~[browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.ServerResponseCaptureFilter.decompressContents(ServerResponseCaptureFilter.java:131) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.ServerResponseCaptureFilter.captureFullResponseContents(ServerResponseCaptureFilter.java:118) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.ServerResponseCaptureFilter.serverToProxyResponse(ServerResponseCaptureFilter.java:99) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.HarCaptureFilter.serverToProxyResponse(HarCaptureFilter.java:250) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.BrowserMobHttpFilterChain.serverToProxyResponse(BrowserMobHttpFilterChain.java:123) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ClientToProxyConnection.respond(ClientToProxyConnection.java:418) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.respondWith(ProxyToServerConnection.java:519) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.readHTTPChunk(ProxyToServerConnection.java:251) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.readHTTP(ProxyConnection.java:146) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.read(ProxyConnection.java:120) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.read(ProxyToServerConnection.java:214) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.channelRead0(ProxyConnection.java:587) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:266) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection$ResponseReadMonitor.channelRead(ProxyConnection.java:738) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection$BytesReadMonitor.channelRead(ProxyConnection.java:692) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1069) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:902) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:411) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:248) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1334) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:926) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:129) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:651) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:574) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:488) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:450) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:873) [browsermob-dist-2.1.4.jar:?]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_281]
+Caused by: java.io.EOFException
+	at java.util.zip.GZIPInputStream.readUByte(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.readUShort(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.readHeader(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.<init>(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.<init>(Unknown Source) ~[?:1.8.0_281]
+	at net.lightbody.bmp.util.BrowserMobHttpUtil.decompressContents(BrowserMobHttpUtil.java:89) ~[browsermob-dist-2.1.4.jar:?]
+	... 53 more
+
+[WARN  2021-04-02T20:38:06,128 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Unable to decompress content with encoding: gzip. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:06,406 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:06,406 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:06,445 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:06,445 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:06,513 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Failed to decompress response with encoding type gzip when decoding request from /pagead/js/adsbygoogle.js net.lightbody.bmp.exception.DecompressionException: Unable to decompress response
+	at net.lightbody.bmp.util.BrowserMobHttpUtil.decompressContents(BrowserMobHttpUtil.java:101) ~[browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.ServerResponseCaptureFilter.decompressContents(ServerResponseCaptureFilter.java:131) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.ServerResponseCaptureFilter.captureFullResponseContents(ServerResponseCaptureFilter.java:118) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.ServerResponseCaptureFilter.serverToProxyResponse(ServerResponseCaptureFilter.java:99) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.HarCaptureFilter.serverToProxyResponse(HarCaptureFilter.java:250) [browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.BrowserMobHttpFilterChain.serverToProxyResponse(BrowserMobHttpFilterChain.java:123) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ClientToProxyConnection.respond(ClientToProxyConnection.java:418) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.respondWith(ProxyToServerConnection.java:519) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.readHTTPChunk(ProxyToServerConnection.java:251) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.readHTTP(ProxyConnection.java:146) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.read(ProxyConnection.java:120) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.read(ProxyToServerConnection.java:214) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.channelRead0(ProxyConnection.java:587) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:266) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection$ResponseReadMonitor.channelRead(ProxyConnection.java:738) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86) [browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection$BytesReadMonitor.channelRead(ProxyConnection.java:692) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1069) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:902) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:411) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:248) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1334) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:926) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:129) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:651) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:574) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:488) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:450) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:873) [browsermob-dist-2.1.4.jar:?]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_281]
+Caused by: java.io.EOFException
+	at java.util.zip.GZIPInputStream.readUByte(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.readUShort(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.readHeader(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.<init>(Unknown Source) ~[?:1.8.0_281]
+	at java.util.zip.GZIPInputStream.<init>(Unknown Source) ~[?:1.8.0_281]
+	at net.lightbody.bmp.util.BrowserMobHttpUtil.decompressContents(BrowserMobHttpUtil.java:89) ~[browsermob-dist-2.1.4.jar:?]
+	... 53 more
+
+[WARN  2021-04-02T20:38:06,514 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Unable to decompress content with encoding: gzip. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:06,519 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:06,519 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:06,577 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:06,577 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:06,614 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:06,614 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:06,643 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:06,643 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:06,650 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:06,650 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:06,653 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:06,653 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:06,667 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:06,667 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:06,888 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:06,888 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:06,952 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:06,952 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:07,003 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:07,003 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:07,176 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:07,176 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:07,901 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:07,901 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:08,184 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:08,184 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-3) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:08,586 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:08,586 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:08,624 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:08,624 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:08,645 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:08,645 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:08,679 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:08,679 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:08,695 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:08,695 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:08,748 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:08,748 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:08,803 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:08,803 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:08,865 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:08,865 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:08,927 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:08,927 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:08,958 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:08,958 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:08,973 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:08,973 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:09,043 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:09,043 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:09,063 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:09,064 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:09,113 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:09,113 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:09,113 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:09,113 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:09,175 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:09,175 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:09,196 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:09,196 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:09,236 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:09,236 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:09,284 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:09,284 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:09,315 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:09,316 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-4) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:09,318 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:09,318 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:09,392 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:09,393 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-0) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:09,500 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:09,501 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-6) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:09,610 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:09,610 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:10,463 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:10,463 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-1) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[WARN  2021-04-02T20:38:10,569 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:10,569 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-7) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[ERROR 2021-04-02T20:38:27,955 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0xab0e078e, L:/10.5.0.2:49898 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOfRange(Unknown Source) ~[?:1.8.0_281]
+	at java.lang.String.<init>(Unknown Source) ~[?:1.8.0_281]
+	at java.lang.StringBuilder.toString(Unknown Source) ~[?:1.8.0_281]
+	at com.google.common.io.BaseEncoding.encode(BaseEncoding.java:158) ~[browsermob-dist-2.1.4.jar:?]
+	at com.google.common.io.BaseEncoding.encode(BaseEncoding.java:143) ~[browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.HarCaptureFilter.captureResponseContent(HarCaptureFilter.java:480) ~[browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.HarCaptureFilter.serverToProxyResponse(HarCaptureFilter.java:267) ~[browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.BrowserMobHttpFilterChain.serverToProxyResponse(BrowserMobHttpFilterChain.java:123) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ClientToProxyConnection.respond(ClientToProxyConnection.java:418) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.respondWith(ProxyToServerConnection.java:519) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.readHTTPChunk(ProxyToServerConnection.java:251) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.readHTTP(ProxyConnection.java:146) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.read(ProxyConnection.java:120) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.read(ProxyToServerConnection.java:214) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.channelRead0(ProxyConnection.java:587) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:266) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection$ResponseReadMonitor.channelRead(ProxyConnection.java:738) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2021-04-02T20:38:27,956 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0xab0e078e, L:/10.5.0.2:49898 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:28,653 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xe41d1a57, L:/10.5.0.2:49927 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOfRange(Unknown Source) ~[?:1.8.0_281]
+	at java.lang.String.<init>(Unknown Source) ~[?:1.8.0_281]
+	at java.lang.StringBuilder.toString(Unknown Source) ~[?:1.8.0_281]
+	at com.google.common.io.BaseEncoding.encode(BaseEncoding.java:158) ~[browsermob-dist-2.1.4.jar:?]
+	at com.google.common.io.BaseEncoding.encode(BaseEncoding.java:143) ~[browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.HarCaptureFilter.captureResponseContent(HarCaptureFilter.java:480) ~[browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.HarCaptureFilter.serverToProxyResponse(HarCaptureFilter.java:267) ~[browsermob-dist-2.1.4.jar:?]
+	at net.lightbody.bmp.filters.BrowserMobHttpFilterChain.serverToProxyResponse(BrowserMobHttpFilterChain.java:123) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ClientToProxyConnection.respond(ClientToProxyConnection.java:418) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.respondWith(ProxyToServerConnection.java:519) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.readHTTPChunk(ProxyToServerConnection.java:251) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.readHTTP(ProxyConnection.java:146) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.read(ProxyConnection.java:120) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyToServerConnection.read(ProxyToServerConnection.java:214) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.channelRead0(ProxyConnection.java:587) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:266) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection$ResponseReadMonitor.channelRead(ProxyConnection.java:738) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2021-04-02T20:38:28,654 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xe41d1a57, L:/10.5.0.2:49927 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:30,894 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0xd2f650c0, L:/10.5.0.2:49931 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:30,894 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0xd2f650c0, L:/10.5.0.2:49931 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:31,541 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0xfb73f5d9, L:/10.5.0.2:49935 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:31,541 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0xfb73f5d9, L:/10.5.0.2:49935 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:33,465 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0xcecfc185, L:/10.5.0.2:49942 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:33,465 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0xcecfc185, L:/10.5.0.2:49942 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:34,111 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x8a54fe3e, L:/10.5.0.2:49946 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:34,111 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x8a54fe3e, L:/10.5.0.2:49946 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[WARN  2021-04-02T20:38:35,969 net.lightbody.bmp.filters.ServerResponseCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) Cannot decode unsupported content encoding type br 
+[WARN  2021-04-02T20:38:35,969 net.lightbody.bmp.filters.HarCaptureFilter] (LittleProxy-0-ProxyToServerWorker-2) Unable to decompress content with encoding: br. Contents will be encoded as base64 binary data. 
+[ERROR 2021-04-02T20:38:36,042 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x5fea0154, L:/10.5.0.2:49952 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:36,043 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x5fea0154, L:/10.5.0.2:49952 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:36,728 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x8c30c597, L:/10.5.0.2:49955 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:36,728 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x8c30c597, L:/10.5.0.2:49955 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:38,685 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x586b2a59, L:/10.5.0.2:49959 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:38,686 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x586b2a59, L:/10.5.0.2:49959 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:39,374 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0x21ec3fcb, L:/10.5.0.2:49977 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:39,375 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0x21ec3fcb, L:/10.5.0.2:49977 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:41,306 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x4dad8f9b, L:/10.5.0.2:50074 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:41,306 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x4dad8f9b, L:/10.5.0.2:50074 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:41,893 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x6e8b5208, L:/10.5.0.2:50093 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:41,893 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x6e8b5208, L:/10.5.0.2:50093 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:43,786 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x24af3e79, L:/10.5.0.2:50101 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:43,787 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x24af3e79, L:/10.5.0.2:50101 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:44,405 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x8a939948, L:/10.5.0.2:50104 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:44,405 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x8a939948, L:/10.5.0.2:50104 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:46,446 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x821dfa3b, L:/10.5.0.2:50109 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:46,446 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x821dfa3b, L:/10.5.0.2:50109 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:47,214 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0xc65a52d9, L:/10.5.0.2:50116 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:47,215 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0xc65a52d9, L:/10.5.0.2:50116 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:51,058 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x36f17f24, L:/10.5.0.2:50126 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:51,059 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x36f17f24, L:/10.5.0.2:50126 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:51,834 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0x6594ce64, L:/10.5.0.2:50130 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:51,834 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0x6594ce64, L:/10.5.0.2:50130 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:54,943 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0xa3c280e0, L:/10.5.0.2:50137 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:54,943 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0xa3c280e0, L:/10.5.0.2:50137 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:55,631 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x8d3bc194, L:/10.5.0.2:50141 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:55,631 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x8d3bc194, L:/10.5.0.2:50141 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:58,933 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x655230ff, L:/10.5.0.2:50169 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:58,934 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x655230ff, L:/10.5.0.2:50169 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:38:59,604 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0xda5e6648, L:/10.5.0.2:50173 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:38:59,604 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0xda5e6648, L:/10.5.0.2:50173 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:02,923 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x74604239, L:/10.5.0.2:50239 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:02,923 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x74604239, L:/10.5.0.2:50239 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:03,601 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xba1f22b0, L:/10.5.0.2:50241 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:03,602 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xba1f22b0, L:/10.5.0.2:50241 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:06,984 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x35fa13f8, L:/10.5.0.2:50265 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:06,984 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x35fa13f8, L:/10.5.0.2:50265 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:07,726 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x0d43cfc3, L:/10.5.0.2:50269 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:07,727 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x0d43cfc3, L:/10.5.0.2:50269 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:10,950 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x50a6f0f0, L:/10.5.0.2:50309 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:10,950 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x50a6f0f0, L:/10.5.0.2:50309 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:11,587 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xa1bfc88e, L:/10.5.0.2:50313 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:11,587 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xa1bfc88e, L:/10.5.0.2:50313 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:14,887 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x1a1a9e41, L:/10.5.0.2:50322 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:14,887 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x1a1a9e41, L:/10.5.0.2:50322 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:15,452 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0xd26dcbaf, L:/10.5.0.2:50324 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:15,452 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0xd26dcbaf, L:/10.5.0.2:50324 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:18,848 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x63dc84f1, L:/10.5.0.2:50366 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:18,848 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x63dc84f1, L:/10.5.0.2:50366 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:19,427 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xd94c16a7, L:/10.5.0.2:50368 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:19,428 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xd94c16a7, L:/10.5.0.2:50368 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:22,953 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x60e1144e, L:/10.5.0.2:50377 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:22,954 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x60e1144e, L:/10.5.0.2:50377 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:23,526 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0xc84e1ceb, L:/10.5.0.2:50379 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:23,526 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0xc84e1ceb, L:/10.5.0.2:50379 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:27,521 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x308b84e1, L:/10.5.0.2:50423 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:27,521 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x308b84e1, L:/10.5.0.2:50423 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:28,059 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xbdb09cd3, L:/10.5.0.2:50427 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:28,059 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xbdb09cd3, L:/10.5.0.2:50427 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:30,859 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x8d3f0a7a, L:/10.5.0.2:50435 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:30,859 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x8d3f0a7a, L:/10.5.0.2:50435 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:31,373 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x7dd1aabd, L:/10.5.0.2:50437 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:31,374 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x7dd1aabd, L:/10.5.0.2:50437 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:34,847 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x9b471d83, L:/10.5.0.2:50486 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:34,847 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x9b471d83, L:/10.5.0.2:50486 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:35,381 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0x267efe95, L:/10.5.0.2:50496 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:35,381 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0x267efe95, L:/10.5.0.2:50496 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:38,808 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x6abe60bb, L:/10.5.0.2:50606 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:38,808 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x6abe60bb, L:/10.5.0.2:50606 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:39,322 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x281dde21, L:/10.5.0.2:50618 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:39,322 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x281dde21, L:/10.5.0.2:50618 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:42,831 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x015afbaa, L:/10.5.0.2:50720 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:42,831 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x015afbaa, L:/10.5.0.2:50720 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:43,384 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x7386d6e6, L:/10.5.0.2:50756 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:43,384 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x7386d6e6, L:/10.5.0.2:50756 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:46,857 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0xa5c987e0, L:/10.5.0.2:50778 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:46,857 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0xa5c987e0, L:/10.5.0.2:50778 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:47,409 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x4a3cd308, L:/10.5.0.2:50780 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:47,409 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x4a3cd308, L:/10.5.0.2:50780 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:50,855 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0xda47c790, L:/10.5.0.2:50821 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:50,855 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0xda47c790, L:/10.5.0.2:50821 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:51,379 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0x84fe8d05, L:/10.5.0.2:50823 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:51,379 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0x84fe8d05, L:/10.5.0.2:50823 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:54,919 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x5e74ee77, L:/10.5.0.2:50830 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:54,919 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x5e74ee77, L:/10.5.0.2:50830 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:55,498 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x4ea94057, L:/10.5.0.2:50834 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:55,498 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x4ea94057, L:/10.5.0.2:50834 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:57,921 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x8f623eb1, L:/10.5.0.2:50874 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:57,921 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x8f623eb1, L:/10.5.0.2:50874 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:39:58,479 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x7956dd47, L:/10.5.0.2:50926 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:39:58,479 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x7956dd47, L:/10.5.0.2:50926 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:01,958 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0xd51f5f53, L:/10.5.0.2:50952 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:01,959 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0xd51f5f53, L:/10.5.0.2:50952 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:02,606 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0xf104c706, L:/10.5.0.2:50955 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:02,606 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0xf104c706, L:/10.5.0.2:50955 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:05,967 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0xf42993ab, L:/10.5.0.2:50967 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:05,968 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0xf42993ab, L:/10.5.0.2:50967 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:06,598 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0x1c65d236, L:/10.5.0.2:51003 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:06,598 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0x1c65d236, L:/10.5.0.2:51003 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:09,973 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0xa8a9f1fb, L:/10.5.0.2:51010 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:09,973 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0xa8a9f1fb, L:/10.5.0.2:51010 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:10,628 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x7465e8dc, L:/10.5.0.2:51012 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:10,629 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x7465e8dc, L:/10.5.0.2:51012 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:13,923 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x2cf52897, L:/10.5.0.2:51021 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:13,924 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x2cf52897, L:/10.5.0.2:51021 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:14,574 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x5ce42e95, L:/10.5.0.2:51057 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:14,574 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x5ce42e95, L:/10.5.0.2:51057 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:17,760 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x8273741c, L:/10.5.0.2:51066 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:17,760 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x8273741c, L:/10.5.0.2:51066 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:17,815 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x8273741c, L:/10.5.0.2:51066 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:17,816 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x8273741c, L:/10.5.0.2:51066 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:18,290 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x65265f5e, L:/10.5.0.2:51069 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:18,290 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x65265f5e, L:/10.5.0.2:51069 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:18,337 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x65265f5e, L:/10.5.0.2:51069 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:18,337 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x65265f5e, L:/10.5.0.2:51069 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:18,382 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x65265f5e, L:/10.5.0.2:51069 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:18,382 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x65265f5e, L:/10.5.0.2:51069 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:18,427 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x65265f5e, L:/10.5.0.2:51069 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:18,427 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x65265f5e, L:/10.5.0.2:51069 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:21,820 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x62516571, L:/10.5.0.2:51076 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:21,820 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x62516571, L:/10.5.0.2:51076 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:22,586 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xc741a992, L:/10.5.0.2:51080 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:22,586 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xc741a992, L:/10.5.0.2:51080 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:22,632 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xc741a992, L:/10.5.0.2:51080 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:22,632 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xc741a992, L:/10.5.0.2:51080 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:22,678 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xc741a992, L:/10.5.0.2:51080 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:22,679 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xc741a992, L:/10.5.0.2:51080 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:22,723 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xc741a992, L:/10.5.0.2:51080 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:22,724 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xc741a992, L:/10.5.0.2:51080 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:25,867 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x7cca1464, L:/10.5.0.2:51119 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:25,867 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x7cca1464, L:/10.5.0.2:51119 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:26,608 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x072b701d, L:/10.5.0.2:51121 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:26,608 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x072b701d, L:/10.5.0.2:51121 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:29,817 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x016b0b56, L:/10.5.0.2:51129 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:29,818 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x016b0b56, L:/10.5.0.2:51129 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:29,866 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x016b0b56, L:/10.5.0.2:51129 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:29,867 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x016b0b56, L:/10.5.0.2:51129 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:29,912 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x016b0b56, L:/10.5.0.2:51129 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:29,912 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x016b0b56, L:/10.5.0.2:51129 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:30,427 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x06e0eb30, L:/10.5.0.2:51165 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:30,428 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x06e0eb30, L:/10.5.0.2:51165 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:33,889 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x66477480, L:/10.5.0.2:51175 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:33,889 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x66477480, L:/10.5.0.2:51175 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:33,936 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x66477480, L:/10.5.0.2:51175 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:33,936 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x66477480, L:/10.5.0.2:51175 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:33,982 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x66477480, L:/10.5.0.2:51175 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:33,983 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x66477480, L:/10.5.0.2:51175 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:34,499 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x74c16bbc, L:/10.5.0.2:51177 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:34,499 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x74c16bbc, L:/10.5.0.2:51177 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:34,553 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x74c16bbc, L:/10.5.0.2:51177 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:34,553 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x74c16bbc, L:/10.5.0.2:51177 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:38,105 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x53273b75, L:/10.5.0.2:51185 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:38,106 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x53273b75, L:/10.5.0.2:51185 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:38,632 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xdaa01a5d, L:/10.5.0.2:51237 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:38,632 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xdaa01a5d, L:/10.5.0.2:51237 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:41,891 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0xa7713ec9, L:/10.5.0.2:51294 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:41,891 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0xa7713ec9, L:/10.5.0.2:51294 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:41,938 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0xa7713ec9, L:/10.5.0.2:51294 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:41,938 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0xa7713ec9, L:/10.5.0.2:51294 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:41,984 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0xa7713ec9, L:/10.5.0.2:51294 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:41,984 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0xa7713ec9, L:/10.5.0.2:51294 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:42,540 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x6d0d2072, L:/10.5.0.2:51297 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:42,540 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x6d0d2072, L:/10.5.0.2:51297 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:42,593 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x6d0d2072, L:/10.5.0.2:51297 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:42,593 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x6d0d2072, L:/10.5.0.2:51297 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:45,910 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x72605387, L:/10.5.0.2:51310 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:45,910 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x72605387, L:/10.5.0.2:51310 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:45,956 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x72605387, L:/10.5.0.2:51310 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:45,957 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x72605387, L:/10.5.0.2:51310 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:46,004 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x72605387, L:/10.5.0.2:51310 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:46,004 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x72605387, L:/10.5.0.2:51310 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:46,532 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xa49209f7, L:/10.5.0.2:51347 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:46,533 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xa49209f7, L:/10.5.0.2:51347 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:46,579 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xa49209f7, L:/10.5.0.2:51347 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:46,579 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xa49209f7, L:/10.5.0.2:51347 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:46,625 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xa49209f7, L:/10.5.0.2:51347 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:46,625 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xa49209f7, L:/10.5.0.2:51347 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:46,670 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xa49209f7, L:/10.5.0.2:51347 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:46,670 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xa49209f7, L:/10.5.0.2:51347 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:49,915 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0xf5bbedd8, L:/10.5.0.2:51352 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:49,915 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0xf5bbedd8, L:/10.5.0.2:51352 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:49,961 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0xf5bbedd8, L:/10.5.0.2:51352 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:49,961 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0xf5bbedd8, L:/10.5.0.2:51352 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:50,008 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0xf5bbedd8, L:/10.5.0.2:51352 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:50,008 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0xf5bbedd8, L:/10.5.0.2:51352 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:50,573 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0xbdb63f1c, L:/10.5.0.2:51356 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:50,573 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0xbdb63f1c, L:/10.5.0.2:51356 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:50,619 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0xbdb63f1c, L:/10.5.0.2:51356 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:50,619 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0xbdb63f1c, L:/10.5.0.2:51356 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:50,665 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0xbdb63f1c, L:/10.5.0.2:51356 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:50,665 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0xbdb63f1c, L:/10.5.0.2:51356 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:53,910 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0xdcbe340f, L:/10.5.0.2:51364 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:53,910 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0xdcbe340f, L:/10.5.0.2:51364 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:53,957 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0xdcbe340f, L:/10.5.0.2:51364 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:53,957 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0xdcbe340f, L:/10.5.0.2:51364 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:54,541 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xb8426cbe, L:/10.5.0.2:51398 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:54,541 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xb8426cbe, L:/10.5.0.2:51398 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:54,588 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xb8426cbe, L:/10.5.0.2:51398 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:54,588 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xb8426cbe, L:/10.5.0.2:51398 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:54,633 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xb8426cbe, L:/10.5.0.2:51398 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:54,633 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xb8426cbe, L:/10.5.0.2:51398 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:57,989 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x2f78d8bd, L:/10.5.0.2:51406 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:57,989 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x2f78d8bd, L:/10.5.0.2:51406 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:40:58,558 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0xc63b6518, L:/10.5.0.2:51410 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:40:58,558 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0xc63b6518, L:/10.5.0.2:51410 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:01,026 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0xc5b80e6f, L:/10.5.0.2:51415 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:01,027 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0xc5b80e6f, L:/10.5.0.2:51415 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:01,075 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0xc5b80e6f, L:/10.5.0.2:51415 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:01,075 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0xc5b80e6f, L:/10.5.0.2:51415 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:01,725 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xda6a5d24, L:/10.5.0.2:51419 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:01,726 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xda6a5d24, L:/10.5.0.2:51419 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:01,777 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xda6a5d24, L:/10.5.0.2:51419 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:01,777 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xda6a5d24, L:/10.5.0.2:51419 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:01,829 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xda6a5d24, L:/10.5.0.2:51419 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:01,829 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xda6a5d24, L:/10.5.0.2:51419 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:01,877 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xda6a5d24, L:/10.5.0.2:51419 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:01,877 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0xda6a5d24, L:/10.5.0.2:51419 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:04,929 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x918011c5, L:/10.5.0.2:51460 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:04,929 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x918011c5, L:/10.5.0.2:51460 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:04,976 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x918011c5, L:/10.5.0.2:51460 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:04,976 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x918011c5, L:/10.5.0.2:51460 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:05,624 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x7dd83b15, L:/10.5.0.2:51464 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:05,624 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x7dd83b15, L:/10.5.0.2:51464 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:05,670 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x7dd83b15, L:/10.5.0.2:51464 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:05,670 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x7dd83b15, L:/10.5.0.2:51464 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:08,955 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x0e63b73f, L:/10.5.0.2:51469 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:08,956 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x0e63b73f, L:/10.5.0.2:51469 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:09,423 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xf71c11c7, L:/10.5.0.2:51473 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:09,423 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xf71c11c7, L:/10.5.0.2:51473 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:09,471 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xf71c11c7, L:/10.5.0.2:51473 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:09,471 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xf71c11c7, L:/10.5.0.2:51473 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:09,517 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xf71c11c7, L:/10.5.0.2:51473 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:09,517 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0xf71c11c7, L:/10.5.0.2:51473 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:13,009 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x3230ebbf, L:/10.5.0.2:51512 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:13,010 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0x3230ebbf, L:/10.5.0.2:51512 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:13,558 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0xeaa870bd, L:/10.5.0.2:51514 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:13,558 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0xeaa870bd, L:/10.5.0.2:51514 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:13,607 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0xeaa870bd, L:/10.5.0.2:51514 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:13,607 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0xeaa870bd, L:/10.5.0.2:51514 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:13,657 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0xeaa870bd, L:/10.5.0.2:51514 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:13,658 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0xeaa870bd, L:/10.5.0.2:51514 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:13,704 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0xeaa870bd, L:/10.5.0.2:51514 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:13,704 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0xeaa870bd, L:/10.5.0.2:51514 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:17,052 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x7bc9f5c8, L:/10.5.0.2:51524 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:17,052 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x7bc9f5c8, L:/10.5.0.2:51524 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:17,101 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x7bc9f5c8, L:/10.5.0.2:51524 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:17,101 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x7bc9f5c8, L:/10.5.0.2:51524 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:17,148 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x7bc9f5c8, L:/10.5.0.2:51524 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:17,148 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x7bc9f5c8, L:/10.5.0.2:51524 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:17,195 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x7bc9f5c8, L:/10.5.0.2:51524 ! R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:17,195 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0x7bc9f5c8, L:/10.5.0.2:51524 ! R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:17,814 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x8d905360, L:/10.5.0.2:51526 - R:v.vrv.co/13.225.148.108:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:17,814 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x8d905360, L:/10.5.0.2:51526 - R:v.vrv.co/13.225.148.108:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:20,652 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0xf9c95810, L:/10.5.0.2:51565 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:20,652 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0xf9c95810, L:/10.5.0.2:51565 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:21,151 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x2065ba15, L:/10.5.0.2:51567 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:21,151 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x2065ba15, L:/10.5.0.2:51567 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:25,574 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0xbcc3eded, L:/10.5.0.2:51579 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:25,574 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0xbcc3eded, L:/10.5.0.2:51579 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:26,056 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0x48b1d510, L:/10.5.0.2:51581 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:26,057 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0x48b1d510, L:/10.5.0.2:51581 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:31,579 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0xf5872cc5, L:/10.5.0.2:51625 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:31,580 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (AWAITING_CHUNK) [id: 0xf5872cc5, L:/10.5.0.2:51625 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:32,078 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x306edec6, L:/10.5.0.2:51627 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:32,078 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (AWAITING_CHUNK) [id: 0x306edec6, L:/10.5.0.2:51627 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:41,579 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0xccd979dd, L:/10.5.0.2:51691 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:41,580 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (AWAITING_CHUNK) [id: 0xccd979dd, L:/10.5.0.2:51691 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:42,048 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x26938a01, L:/10.5.0.2:51693 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:42,049 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (AWAITING_CHUNK) [id: 0x26938a01, L:/10.5.0.2:51693 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:41:59,560 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x08019b04, L:/10.5.0.2:51882 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:41:59,560 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (AWAITING_CHUNK) [id: 0x08019b04, L:/10.5.0.2:51882 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:42:00,061 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x853e8291, L:/10.5.0.2:51884 - R:v.vrv.co/13.225.148.33:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:42:00,061 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (AWAITING_CHUNK) [id: 0x853e8291, L:/10.5.0.2:51884 - R:v.vrv.co/13.225.148.33:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:42:33,706 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x2e8b0e53, L:/10.5.0.2:52068 - R:v.vrv.co/13.225.148.105:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:42:33,706 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (AWAITING_CHUNK) [id: 0x2e8b0e53, L:/10.5.0.2:52068 - R:v.vrv.co/13.225.148.105:443]: Disconnecting open connection to server 
+[ERROR 2021-04-02T20:42:34,196 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0x5915e3c7, L:/10.5.0.2:52070 - R:v.vrv.co/13.225.148.105:443]: Caught an exception on ProxyToServerConnection java.lang.OutOfMemoryError: Java heap space
+
+[INFO  2021-04-02T20:42:34,197 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (AWAITING_CHUNK) [id: 0x5915e3c7, L:/10.5.0.2:52070 - R:v.vrv.co/13.225.148.105:443]: Disconnecting open connection to server 

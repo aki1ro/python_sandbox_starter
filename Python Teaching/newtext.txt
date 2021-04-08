@@ -1,0 +1,1 @@
+This is a new file I wrote in using write function ['hello my name is nick\n', 'hi hi hi hi hi hi hi\n', 'ho ho ho ho ho ho ho \n', 'herhehehehhehehehehehe']

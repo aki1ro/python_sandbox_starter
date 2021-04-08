@@ -1,0 +1,164 @@
+
+******completed*******
+Goal 1: Generate a script that creates a user and connects them to the "NetworkShare" on windows network share, then create that user a folder with full permissions and copy the "You've Made it.txt" to the user's desktop.
+
+
+******completed*******
+Goal 2: Create a script that takes video specified by keywords or titles from any source (ie: anime site, or other streaming site) and off-loads it into a data storage on the network.
+
+Goal 2a: Create a script that sorts through a directory and alphabetizes it. maybe a function
+
+Goal 3: create a dictionary that calls location of a file or directory.
+
+******completed*******
+Goal 4: Create a script that generates a log with the current overall performance of a system as well as system specifications including: storage usage, ram available and usage, and uptime.
+
+Goal *5*: 
+create machine learning model using computer vision (Tensorflow?,numpy,matlibplot,pandas)
+
+------------------------------------------------
+Goal 1: User.Create.Share.py 
+subprocess, os, maybe time?
+
+Step 0: Prompt for root userpassword if normal or not root user:
+Look to see if user is root user or have it prompt if it detects you're not root.
+
+Step 1: commands used to create user ***define functon for this**:
+useradd -mrp (m = create home directory use /etc/skel to add folders/files to home directory, r = encrypted password p = password for user)
+
+passwd "Enter password" *prompt terminal for password
+use print() maybe to pass input for password.
+
+Step 2: Connect user to Network_Share:
+Step 2a: Create credentials file..../etc/"win-credentials"
+Step 2b: Attached Share *Define Function for this*:
+use subprocess here >>>> mount -t cifs -o credentials=/etc/win-credentials //WIN_SHARE_IP/<share_name> /mnt/NetworkShare (used /etc/fstab to have mount auto on boot)
+
+Step 2: commands to create a directory in mounted Network_Share:
+sub process >>> mkdir /mnt/NetworkShare/"username"
+
+Step 3: give permissions to folder:
+subprocess >>> chown "username": /mnt/NetworkShare/"username" 
+
+For example,  would allow:
+
+"read" (4), "write" (2), and "execute" (1) 
+
+
+Step 4: sub process >>> chmod 600 /mnt/NetworkShare/"username"
+
+
+Step 5: copy "You've Made it.txt" to desktop:
+subprocess >> cp /mnt/NetworkShare/"You've Made it.txt" /home/"Username"/Desktop
+-----------------------------------------------
+
+Goal 4:
+
+Step 1: some commands for performance checking:
+STORAGE:
+iostat (checks disk performance)
+iotop -nao (n = numbers of iterations before end, a = accumalated io vs bandwidth o = only running IO processes shown.)
+lsblk (show storage devices)
+
+MEMORY:
+free -h (shows total/used/free space, h = human readable numbers)
+
+NETWORK:
+tcpdump (live network packet analyzer)
+netstat -r (monitor incoming and out going networks, r = show routing table )
+ifconfig -v (shows interface configuration,  v = show some error conditions)
+
+ACTIVITY:
+Lsof (list open files(checks for mounted issue)
+ac -pd (ac displays statistics on connect time in hours. p = show users, d = show by day. )
+uptime(check system uptime)
+w (check users current activity)
+Top 10 Memory Consuming Process
+# ps -auxf | sort -nr -k 4 | head -10
+Show Us Top 10 CPU Consuming Process
+# ps -auxf | sort -nr -k 3 | head -10
+top (show's top usage, including ram, cpu, etc)
+
+SYSTEM INFO:
+lshw -short -html > lshw.html(shows system info, -short = shows short list, -html > lshw.html = if you want to generate output as a html file)
+dmidecode -t bios (shows bios information)
+
+Step 2a:
+
+create function for selection of menu:
+Select from the following:
+
+QUICK INFO(0)\nSYSTEM INFO(1)\nSYSTEM ACTIVITY(2)\nSTORAGE(3)\nMEMORY(4)\nNETWORK(5)\nLOGS(6)
+
+
+
+
+Step 2b:
+Create function with input for each options of catagories to display them as need be.
+
+
+Step 3:
+Options for going back to menu or exit
+
+Step 4:
+Option to show quick summary
+
+Step 5:
+Look at system logs and add commands to display logs as a progressive window scrolling through
+cat /var/log/secure | tail -1000 | more
+cat /var/log/messages | tail -1000 | more
+cat /var/log/cron | tail -1000 | more
+
+
+------------------------------------------------
+
+Goal 2:
+Step 1:
+create the html extract to extract source code to locate stream location:
+
+
+create scraper to grab url link for videos then pass through download function to grab stream and place into file.
+using .ts (transport stream) and appending them to one file to view. 
+
+
+
+
+import requests
+
+def download_file(url):
+    local_filename = url.split('/')[-1]
+    # NOTE the stream=True parameter
+    r = requests.get(url, stream=True)
+    with open(local_filename, 'wb') as f:
+        for chunk in r.iter_content(chunk_size=1024): 
+            if chunk: # filter out keep-alive new chunks
+                f.write(chunk)
+                f.flush() #commented by recommendation from J.F.Sebastian
+    return local_filename
+    
+
+Step 2:
+Create function to find videos wanted
+
+Step 3:
+function to grab video and download to location (network share)
+
+Create objects maybe class needed to identify videos and download them if needed to proper location
+Step 4:
+organize the videos as need be (folder, etc)
+
+Step 5:
+Summary of titles currently in library
+
+Step 6:
+Refresh the source to look for new releases
+
+Step 7: update database of videos.
+
+
+
+
+
+
+
+

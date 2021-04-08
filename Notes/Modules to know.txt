@@ -1,0 +1,50 @@
+Web development modules:
+
+requests = used for http
+
+django = back end web framework for Python
+
+
+flask = competitor to django, also a framework. Works similar to django, flask is easier and faster to setup. lightweight.
+
+twisted = online game developement is one of it's purposes. communication between clients and servers
+
+beautifulsoup = for webscraping, trying to grab html data
+
+selenium = used to automation on websites, access html fields, click, mouser cursor. 
+
+--------------------------------------------------------------------------------------------
+Data science modules:
+
+numpy = module for doing mathematical operations in python, matrices, 2d/3d/4d/5d math fast as alot of operations are written in C
+
+pandas = used for reading and working with data in general
+
+matplotlib = used for data visualization, plots, charts, etc. Also good for machine learning. visualization of funtions etc. 
+
+nltk = natural langauge toolkit = used for data/text processing, want to remove things like spaces, etc from text based data. 
+
+opencv = main focus is on image and video data processing, feature detection and description. extremely strong module for doing anything with image/video data
+--------------------------------------------------------------------------------------------
+Machine Learning/ AI:
+
+tensorflow = google module, extremely powerful, standard machine learning algorithms, neural networks, etc. 
+
+keras = higher level API for tensorflow, mainted and supported by google. allows to access tensorflow features in an easier way, doing things quickly.
+
+pytorch = another module for machine learning, and AI. a little behind tensorflow
+
+scikit-learn = not as powerful as the above modules, used for clusering algorithms, lightweight module
+--------------------------------------------------------------------------------------------
+Graphical User Interface:
+
+kivy = for building applications that will scale all different platforms. 
+
+PyQt5 = best graphical user interface builder for python. can use css3 styling to style application.
+
+tkinter = older module, similar to pyqt5, not as capable. easier for beginners. 
+
+Gaming:
+
+pygame = module for building simple games. 
+

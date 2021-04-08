@@ -1,0 +1,2 @@
+b'\r\nEthernet 4                                      \r\n   Type:                 Dedicated             \r\n   Administrative state: Enabled             \r\n   Connect state:        Connected             \r\n\r\n'
+

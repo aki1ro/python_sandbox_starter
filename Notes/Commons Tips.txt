@@ -1,0 +1,35 @@
+#Python 3 does not allow mixing spaces and tabs for indentation.
+
+Priority	Operator	
+1	+, -	unary
+2	**	
+3	*, /, //, %	
+4	+, -	binary
+5	<, <=, >, >=	
+6	==, !=	
+
+In general, a typical function invocation may look like this:
+
+result = function(arg)
+
+he function takes an argument, does something, and returns a result.
+
+A typical method invocation usually looks like this:
+
+result = data.method(arg)
+
+Lists (and many other complex Python entities) are stored in different ways than ordinary (scalar) variables.
+
+You could say that:
+
+the name of an ordinary variable is the name of its content;
+the name of a list is the name of a memory location where the list is stored.
+
+3 Conditions for writing your own function:
+
+We can now define the first condition which can help you decide when to start writing your own functions: if a particular fragment of the code begins to appear in more than one place, consider the possibility of isolating it in the form of a function invoked from the points where the original code was placed before.
+
+We can now state the second condition: if a piece of code becomes so large that reading and understating it may cause a problem, consider dividing it into separate, smaller problems, and implement each of them in the form of a separate function.
+
+This leads us directly to the third condition: if you're going to divide the work among multiple programmers, decompose the problem to allow the product to be implemented as a set of separately written functions packed together in different modules.
+
