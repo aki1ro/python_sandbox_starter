@@ -2,71 +2,74 @@
 
 
 class Budget:
-   def __init__(self, total, subtotal, category):
+   subtotal = 0
+   def __init__(self, total,category):
       print(f"Current Budget: {total}")
       self.funds = total
-      self.subfunds = subtotal
       self.category = category
 
    def withdraw(self, amount):
       self.funds += amount
-      self.subfunds -= amount
+      Budget.subtotal -= amount
       print(f"You've removed {amount} funds from {self.category}")
       return self.funds and print(f"Total remaining on Budget: {self.funds}")
-
+      
    def deposit(self, amount):
       self.funds -= amount
-      self.subfunds += amount
-      print(f"You've Deposited {amount} funds from {self.catagory}")
+      Budget.subtotal += amount
+      print(f"You've Deposited {amount} funds into {self.category}")
+      return self.funds and print(f"Total remaining on Budget: {self.funds}")
+     
    
+
    def review(self):
-      print()
+      pass
    
    def total(self):
-      print()
-
+      pass
    
    # def transfer(self):
 
-class food(Budget):
-   def __init__(self):
-      self.subtotal = subtotal
-      super().__init__(self.subtotal, "Food")
+# class food(Budget):
+#    def __init__(self):
+#       self.subtotal = Budget.subtotal
+#       super.__init__(self.total, self.subtotal, "Food")
+#       return self.subtotal
 
-class clothing(Budget):
-   def __init__(self):
-      self.subtotal = subtotal
-      super().__init__(self.subtotal, "Clothing")
+# class clothing(Budget):
+#    def __init__(self):
+#       self.subtotal = Budget.subtotal
+#       super.__init__(self.total, self.subtotal, "Clothing")
+#       return self.subtotal
 
-class entertainment(Budget):
-   def __init__(self):
-      self.category = category
-      self.subtotal = subtotal
-      super().__init__(self.total, self.subtotal, "Entertainment")
+# class entertainment(Budget):
+#    def __init__(self):
+#       self.subtotal = Budget.subtotal
+#       super.__init__(self.total, self.subtotal, "Entertainment")
+#       return self.subtotal
 
 
-def select(total = int(input("Enter Budget Amount: ")),subtotal = 0):
+def select(total = int(input("Enter Budget Amount: "))):
    while total > 0:
       t = total
-      s = subtotal
       c = input("Select Category to allocate budget(food,clothing,entertainment):")
       o = input("Select Option(save,spend,review,end): ")
       if o == "save":
          a = int(input("Enter amount to save: "))
-         b = Budget(t,s,c)
+         b = Budget(t,c)
          b.withdraw(a)
       elif o == "spend":
          a = int(input("Enter amount to spend: "))
-         b = Budget(t,s,c)
-         b.withdraw(a)
+         b = Budget(t,c)
+         total = b.deposit(a)
       elif o == "review":
          c.review()
       else:
             continue
    else:
-      Budget.total()
+      pass
       
-
+      
 
 
 select()
