@@ -1,4 +1,6 @@
 from random import randrange
+import time
+
 
 '''
 Notes:
@@ -57,35 +59,39 @@ def display_board(board):
 # The function accepts the board current status, asks the user about their move, # checks the input and updates the board according to the user's decision.
 
 def enter_move(board):
-   while True:
-      move = input("Enter square # to select: ")
-      move = int(move)
-      if move in range(1,4):
-         select = (move - 1)
-         if board[0][select] == "O" or board[0][select] == "X":
-            print("\nSelect Unused Square!\n")
-         else:
-            board[0][select] = "O"
-            display_board(board)
-            return False
+   try:
+      while True:
+         move = input("Enter square # to select (ctrl + c or press enter to skip turn): ")
+         move = int(move)
+         if    move in range(1,4):
+            select = (move - 1)
+            if board[0][select] == "O" or board[0][select] == "X":
+               print("\nSelect Unused Square!\n")
+            else:
+               board[0][select] = "O"
+               display_board(board)
+               return False
      
-      elif move in range(4,7):
-         select = (move - 4)
-         if board[1][select] == "O" or board[1][select] == "X":
-            print("\nSelect Unused Square!\n")
-         else:
-            board[1][select] = "O"
-            display_board(board)
-            return False
+         elif move in range(4,7):
+            select = (move - 4)
+            if board[1][select] == "O" or board[1][select] == "X":
+               print("\nSelect Unused Square!\n")
+            else:
+               board[1][select] = "O"
+               display_board(board)
+               return False
     
-      elif move in range(7,10):
-         select = (move - 7)
-         if board[2][select] == "O" or board[2][select] == "X":
-            print("\nSelect Unused Square!\n")
-         else:
-            board[2][select] = "O"
-            display_board(board)
-            return False
+         elif move in range(7,10):
+            select = (move - 7)
+            if    board[2][select] == "O" or board[2][select] == "X":
+               print("\nSelect Unused Square!\n")
+            else:
+               board[2][select] = "O"
+               display_board(board)
+               return False
+   except(KeyboardInterrupt,ValueError):
+         print("Skipping turn...")
+         time.sleep(1.5)
       
 # The function draws the computer's move and updates the board.
 

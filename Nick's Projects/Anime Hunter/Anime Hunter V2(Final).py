@@ -1,6 +1,4 @@
-import os
-import time
-import requests
+import os, time, request
 import datetime as datetime
 import fnmatch #used for matching of names in a string
 import subprocess as sp
