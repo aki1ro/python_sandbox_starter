@@ -1,3 +1,5 @@
-from sys import path
+import main2 as m
 
-print(path)
+
+m.HeroSM()
+
