@@ -18,3 +18,7 @@ def fib(n):
 
 print(fib(50))
 
+var = '''nick is here
+here is nick'''
+
+print(var)

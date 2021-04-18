@@ -132,11 +132,8 @@ _ . '           .-              `        `
           \__/
 '''
 
-# print(boat_rocks)
-# input("enter to exit...")
+print(boat_rocks)
+input("enter to exit...")
 
-print(ord('¶'))
-
-print(chr(182) * 100)
 
 

@@ -13,12 +13,12 @@ colors = (("green", "#008000"), ("blue", "#0000FF"))
 color1 = colors[0]
 color2 = colors[1]
 colors_dictionary = {}
-colors_dictionary.update((color1))
-colors_dictionary.update((color2))
+colors_dictionary.update(())
+colors_dictionary.update(())
 
 print(colors_dictionary)
 
-
+print('''
 +-------+-------+-------+
 |       |       |       |
 |   O   |   X   |   3   |
@@ -32,4 +32,5 @@ print(colors_dictionary)
 |   7   |   O   |   9   |
 |       |       |       |
 +-------+-------+-------+
+''')
 

@@ -113,7 +113,7 @@ print("Nick " + "Computer")
 print("Nick " * 27)
 #You may not be able to add strings to integers, but you can multiply by them!
 print(((60//7) * 700)%8 * "8") #the reason it outputs nothing is because the answer is 0
-print(((60**3)//8) * '\n2') #\n for new line
+# print(((60**3)//8) * '\n2') #\n for new line
 
 #If you want to add quotations without issues use escape character aka backslash \
 
@@ -194,4 +194,18 @@ cube = [[[':(', 'x', 'x'],
 print(cube)
 print(cube[0][0][0])  # outputs: ':('
 print(cube[2][2][0])  # outputs: ':)'
+
+print(ord("a")) # used to find code point for character
+print(ord("2"))
+
+print(chr(21)) # used to find character based on code point
+print(chr(61))
+
+# min() is used to find the lowest code character 
+
+print(min("Nick'shere"))
+
+# max() is used to find the highers or maximum element of a sequence 
+
+print(max("wadnoawjdoaszdfSADAWGA"))
 

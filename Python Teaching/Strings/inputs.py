@@ -31,7 +31,7 @@ random_number = input("Enter Random Number: ")
 
 print("Hi my name is",name,"and I like to",interest,"I do this",random_number,"times a day, because I love it so much. I even do it while I wear my famously beautiful",favorite_color,"dress!!")
 
-input("Hope you Enjoyed! lol! Press enter to exit") #added so the terminal doesn't close after code is run. 
+input("Hope you Enjoyed! lol! Press enter to exit...") #added so the terminal doesn't close after code is run. 
 
 
 
