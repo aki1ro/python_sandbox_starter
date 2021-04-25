@@ -1,6 +1,14 @@
+a = '\n  ###\n  #\n  ###\n    #\n  ###'
 
+b = '\n  ###\n  #\n  ###\n    #\n  ###'
 
+# print(a + b)
 
+# a = 'nick'
+
+# b = 'endrikat'
+
+# print(a + b)
 def ledmaker(number):
   number = str(number)
   led = []
@@ -43,8 +51,7 @@ def ledmaker(number):
   #
   ###
     #
-  ###
-'''
+  ###'''
       led.append(i)
     elif i == "6":
       i = '''
@@ -87,9 +94,14 @@ def ledmaker(number):
   ###'''
       led.append(i)
   print(led)
-  print(''.join(led))
+  final_led(led)
 
 
+def final_led(*led):
+  return led
+
+
+print(ledmaker(1))
 
   # ### ### # # ### ### ### ### ### ### 
   #   #   # # # #   #     # # # # # # # 
@@ -97,4 +109,3 @@ def ledmaker(number):
   # #     #   #   # # #   # # #   # # # 
   # ### ###   # ### ###   # ### ### ###
 
-ledmaker(55)

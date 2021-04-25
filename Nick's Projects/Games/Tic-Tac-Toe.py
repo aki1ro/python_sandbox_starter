@@ -40,7 +40,6 @@ def game_start():
       if victory_for(board, 'X') == False:
          break
       count + 1
-      make_list_of_free_fields(board)
    print("Game Over")
    key = input("Press Enter to quit or 'r' to play again: ")
    if key == 'r':
@@ -137,15 +136,17 @@ def draw_move(board):
 # function browses the board and builds a list of all the free squares;
 # the list consists of tuples, while each tuple is a pair of row and column numbers
 
-def make_list_of_free_fields(board):
-   # print(board)
-   for r in enumerate(board):
-      for free in str(r):
-         squares = ["1","2","3","4","5","6","7","8","9"]
-         # print(squares)
-         if free in squares:
-            if "X" in r or "O" in r:
-               print("Char %s found at list %s at index %s" % (free,r, r.index(free)))
+# def make_list_of_free_fields(board):
+#    # print(board)
+#    for r in enumerate(board):
+#       for free in str(r):
+#          squares = ["1","2","3","4","5","6","7","8","9"]
+#          # print(squares)
+#          if free in squares:
+#             if "X" in r or "O" in r:
+#                print("Char %s found at list %s at index %s" % (free,r, r.index(free)))
+               
+               
 
 
 # The function analyzes the board status in order to check if 
