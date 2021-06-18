@@ -14,6 +14,9 @@
 		},
 		{
 			"path": "..\\..\\Powershell_Sandbox"
+		},
+		{
+			"path": "..\\..\\JSON"
 		}
 	],
 	"settings": {}

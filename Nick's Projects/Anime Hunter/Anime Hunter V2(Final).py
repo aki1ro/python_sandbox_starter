@@ -1,4 +1,4 @@
-import os, time, request
+import os, time, requests
 import datetime as datetime
 import fnmatch #used for matching of names in a string
 import subprocess as sp
@@ -24,7 +24,7 @@ driver = webdriver.Firefox(options=firefox_options)
 driver.get("https://subsplease.org")
 
 #List of anime to check for
-anime = open('/media_share/anime/animewantlist.txt', "r+")
+anime = open('/raid_storage/media_share/anime/animewantlist.txt', "r+")
 
 #Used to find the anime in the main list
 def findanime():
@@ -66,7 +66,7 @@ def ep_filter(el, a):
 def episode_check(el, an):
    ani = []
    for e in el:
-      with open('/media_share/anime/animelist.txt', "r+") as al:
+      with open('/raid_storage/media_share/anime/animelist.txt', "r+") as al:
          for a in al:
             a = ani.append(a.rstrip())
          if e in ani:
@@ -90,14 +90,10 @@ def magnetgrabber(e, an):
 
 #Downloads the torrent using qbittorrent
 def torrent_download(magnet, an):
-   makedir = (f'/media_share/anime/{an}')
+   makedir = (f'/raid_storage/media_share/anime/{an}')
    # print(makedir)
    sp.run(['mkdir','-p', makedir])
    qb.download_from_link(magnet, savepath=makedir)
 
-import numpy as np
 findanime()
-
-
-
 
